@@ -25,7 +25,7 @@ return 1;
 printf("2. Semaphore initiated to 1.\n");      
 struct sembuf op;
 op.sem_num=0;
-op.sem_fig=SEM_UNDO;
+op.sem_flg=SEM_UNDO;
 op.sem_op = -1;
 printf("3. Locking Semaphore...\n");
 semop(semid,&op,1);
