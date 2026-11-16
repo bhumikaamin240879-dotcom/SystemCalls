@@ -17,7 +17,7 @@ perror("semget error ");
 return 1;
 }
 printf("1. Semaphore Created. ID: %d\n",semid);
-if (semctl (seemid , 0, SETVAL,1)== -1)
+if (semctl (semid , 0, SETVAL,1)== -1)
 {
 perror("semctl init error");
 return 1;
