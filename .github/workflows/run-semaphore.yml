@@ -1,0 +1,23 @@
+
+name: Run Semaphore Program
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'semaphore.c'
+      - '.github/workflows/run-semaphore.yml'
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compile C program
+        run: gcc semaphore.c -o semaphore
+
+      - name: Run Semaphore
+        run: ./semaphore
